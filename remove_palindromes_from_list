@@ -1,0 +1,22 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+import java.util.stream.Collectors;
+class Main {
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("Premium","madam","java");
+        
+        System.out.println(list.stream().filter(x -> !isPalindrome(x)).collect(Collectors.toList()));
+        
+    }
+    
+    public static boolean isPalindrome(String x)
+    {
+        for(int i=0;i<(x.length()/2);i++){ 
+            if(x.charAt(i)!=x.charAt(x.length()-i-1)){
+                return false;
+            }
+        }
+        return true;
+    }
+}
