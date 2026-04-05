@@ -1,0 +1,21 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+import java.util.stream.Collectors;
+
+class Main {
+    public static void main(String[] args) {
+        
+        List<String> words = Arrays.asList("apple","apple","banana","orange","banana","banana");
+        
+        Map<String, Long> wordCount = words.stream().collect(Collectors.groupingBy(w -> w, Collectors.counting()));
+        
+        
+        System.out.println(wordCount);
+        
+        String mostFrequent = wordCount.entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
+        
+        System.out.println(mostFrequent);
+
+    }
+}
